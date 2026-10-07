@@ -1,271 +1,216 @@
-cloud-native-platform
+Cloud Native Platform
 
-A cloud-native application built with Node.js and Express, designed to demonstrate practical DevOps, Cloud, Infrastructure as Code, CI/CD, containerization, security, observability, and platform engineering skills.
+A production-oriented cloud-native application and DevOps engineering project demonstrating modern software delivery, infrastructure automation, cloud architecture, containerization, Kubernetes, security, and observability.
 
-This project starts with a simple Express application and progressively evolves into a production-oriented cloud-native platform.
+Overview
 
-The goal is not just to build an application, but to demonstrate how modern applications are built, tested, packaged, deployed, monitored, and operated in the cloud.
+Cloud Native Platform is an evolving DevOps and Cloud Engineering project built around a Node.js/Express application.
 
-Project Goals
+The project is intentionally designed to progress from a simple application into a production-grade cloud-native platform, demonstrating how modern engineering teams build, secure, automate, deploy, and operate applications at scale.
 
-This repository is designed to demonstrate middle-to-senior-level skills across:
+Rather than focusing solely on application development, this project emphasizes the entire software delivery lifecycle:
 
-Cloud infrastructure
-
-DevOps automation
-
-CI/CD pipelines
-
-Docker and containerization
-
-Infrastructure as Code
-
-Kubernetes
-
-Cloud networking
-
-Application security
-
-Secrets management
-
-Monitoring and observability
-
-Logging
-
-Automated testing
-
-Deployment strategies
-
-Infrastructure automation
-
-Reliability and scalability
-
-Current Version
-Version 1 — Express Application
-
-The current version establishes the application foundation using Node.js and Express.
-
-At this stage, the project demonstrates:
-
-Express application setup
-
-HTTP fundamentals
-
-Express routing
-
-Static file serving
-
-Node.js package management
-
-Local development
-
-Basic troubleshooting
-
-Git-based source control
-
-Future versions will progressively introduce DevOps and cloud engineering capabilities.
-
-Technology Roadmap
-
-The project will evolve through multiple stages:
-
-Express Application
-        │
-        ▼
-Docker Containerization
-        │
-        ▼
+Source Code
+    │
+    ▼
+Development
+    │
+    ▼
 Automated Testing
-        │
-        ▼
-CI Pipeline
-        │
-        ▼
-Security Scanning
-        │
-        ▼
+    │
+    ▼
+CI/CD
+    │
+    ▼
+Containerization
+    │
+    ▼
 Infrastructure as Code
-        │
-        ▼
+    │
+    ▼
 Cloud Infrastructure
-        │
-        ▼
+    │
+    ▼
 Kubernetes
-        │
-        ▼
-Continuous Deployment
-        │
-        ▼
+    │
+    ▼
 Observability
-        │
-        ▼
-Production-Ready Platform
+    │
+    ▼
+Production Operations
+
+
+The repository serves as a practical demonstration of mid-to-senior level DevOps, Cloud, and Platform Engineering capabilities.
+
+Engineering Objectives
+
+The primary objectives of this project are to demonstrate the ability to:
+
+Design and automate cloud infrastructure
+
+Build reliable CI/CD pipelines
+
+Containerize applications using Docker
+
+Provision infrastructure using Infrastructure as Code
+
+Deploy and manage workloads with Kubernetes
+
+Implement security throughout the development lifecycle
+
+Establish application and infrastructure observability
+
+Automate repetitive operational tasks
+
+Apply production-grade deployment strategies
+
+Design for scalability, reliability, and maintainability
+
+Document architecture and engineering decisions
 
 Architecture Evolution
 
-The initial architecture is intentionally simple:
+The platform will evolve through multiple architectural stages.
 
-              ┌─────────────────┐
-              │     Browser     │
-              └────────┬────────┘
-                       │
-                       ▼
-              ┌─────────────────┐
-              │  Express App    │
-              │    Node.js      │
-              └────────┬────────┘
-                       │
-                       ▼
-              ┌─────────────────┐
-              │ Static Content  │
-              │    /public      │
-              └─────────────────┘
+Current Architecture
 
+The initial implementation provides a lightweight Express application:
 
-As the project evolves, the architecture will move toward:
+┌──────────────┐
+│    Client    │
+└──────┬───────┘
+       │ HTTP
+       ▼
+┌──────────────────┐
+│  Node.js/Express │
+│    Application   │
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│  Static Content  │
+│     /public      │
+└──────────────────┘
 
-                         ┌──────────────────┐
-                         │      Users       │
-                         └────────┬─────────┘
-                                  │
-                                  ▼
-                         ┌──────────────────┐
-                         │ Load Balancer /  │
-                         │    Ingress       │
-                         └────────┬─────────┘
-                                  │
-                                  ▼
-                    ┌──────────────────────────┐
-                    │       Kubernetes         │
-                    │                          │
-                    │  ┌────────────────────┐  │
-                    │  │   Express App      │  │
-                    │  │    Containers      │  │
-                    │  └────────────────────┘  │
-                    │                          │
-                    └───────────┬──────────────┘
-                                │
-                ┌───────────────┼────────────────┐
-                ▼               ▼                ▼
-           Monitoring        Logging         Cloud Services
+Target Architecture
 
-Current Project Structure
-cloud-native-platform/
-├── public/
-│   └── index.html
-├── index.js
-├── package.json
-├── package-lock.json
-└── README.md
+The long-term architecture will introduce automated delivery, cloud infrastructure, containers, Kubernetes, and observability:
 
-
-The structure will expand as infrastructure and automation are introduced.
-
-Requirements
-
-Before running the application locally, install:
-
-Tool	Purpose
-Node.js	JavaScript runtime
-npm	Package management
-Git	Source control
-VS Code	Recommended development environment
-Terminal	Command-line operations
-Running the Application Locally
-1. Clone the repository
-git clone <repository-url>
-cd cloud-native-platform
-
-2. Install dependencies
-npm install
-
-3. Start the application
-node index.js
+                           ┌─────────────────┐
+                           │     Users       │
+                           └────────┬────────┘
+                                    │
+                                    ▼
+                           ┌─────────────────┐
+                           │ Load Balancer / │
+                           │     Ingress     │
+                           └────────┬────────┘
+                                    │
+                                    ▼
+                     ┌───────────────────────────┐
+                     │        Kubernetes         │
+                     │                           │
+                     │  ┌─────────────────────┐  │
+                     │  │   Application Pods  │  │
+                     │  │  Node.js / Express  │  │
+                     │  └─────────────────────┘  │
+                     │                           │
+                     └─────────────┬─────────────┘
+                                   │
+              ┌────────────────────┼────────────────────┐
+              │                    │                    │
+              ▼                    ▼                    ▼
+        ┌───────────┐       ┌────────────┐       ┌──────────────┐
+        │   Cloud   │       │ Observability│      │   Security   │
+        │ Services  │       │   Platform   │      │   Controls   │
+        └───────────┘       └────────────┘       └──────────────┘
 
 
-You should see:
+Infrastructure and application delivery will be managed through automated pipelines and Infrastructure as Code.
 
-Server is running at http://localhost:3000
+Technology Stack
 
-4. Open the application
+The technology stack will evolve as the platform matures.
 
-Navigate to:
-
-http://localhost:3000
-
-Application Configuration
-
-The application currently runs on port 3000.
-
-A future version will use environment variables for configuration, for example:
-
-PORT=3000
-NODE_ENV=development
-
-
-This will allow configuration to be separated from application code as the project moves toward containerized and cloud deployments.
-
-Example Express Route
-
-The application can be extended with additional routes:
-
-app.get('/about', (req, res) => {
-  res.send('About this application');
-});
-
-DevOps Engineering Roadmap
-
-The project will be developed incrementally.
-
-Phase 1 — Application Foundation
+Application
 
 Node.js
 
 Express
 
-HTTP
+JavaScript
 
-Routing
+REST APIs
 
-Static content
+Source Control & CI/CD
 
 Git
 
-Status: 🟢 In Progress
-
-Phase 2 — Containerization
-
-Docker
-
-Dockerfile
-
-Docker Compose
-
-Container networking
-
-Image optimization
-
-Multi-stage builds
-
-Status: 🔵 Planned
-
-Phase 3 — CI/CD
+GitHub
 
 GitHub Actions
 
-Automated testing
+Containers
 
-Build pipelines
+Docker
 
-Container image builds
+Docker Compose
 
-Artifact management
+Container registries
 
-Deployment automation
+Infrastructure as Code
 
-Status: 🔵 Planned
+Terraform
 
-Phase 4 — Security
+Terraform modules
+
+Remote state management
+
+Cloud
+
+The project will target a major cloud provider and demonstrate:
+
+Compute
+
+Networking
+
+Identity and Access Management
+
+Load balancing
+
+Storage
+
+Security controls
+
+Monitoring
+
+Infrastructure automation
+
+Kubernetes
+
+Kubernetes
+
+Deployments
+
+Services
+
+Ingress
+
+ConfigMaps
+
+Secrets
+
+Health probes
+
+Resource management
+
+Horizontal Pod Autoscaling
+
+Helm
+
+Security
+
+Static Application Security Testing
 
 Dependency scanning
 
@@ -273,79 +218,283 @@ Container image scanning
 
 Secret management
 
-Least-privilege principles
+IAM
 
-SAST
+Least-privilege access
 
 Supply-chain security
 
-Status: 🔵 Planned
-
-Phase 5 — Infrastructure as Code
-
-Terraform
-
-Cloud networking
-
-IAM
-
-Compute resources
-
-Storage
-
-Infrastructure modules
-
-Remote state management
-
-Status: 🔵 Planned
-
-Phase 6 — Kubernetes
-
-Kubernetes fundamentals
-
-Deployments
-
-Services
-
-ConfigMaps
-
-Secrets
-
-Ingress
-
-Health checks
-
-Resource requests and limits
-
-Horizontal Pod Autoscaling
-
-Status: 🔵 Planned
-
-Phase 7 — Observability
+Observability
 
 Metrics
 
 Logging
 
-Distributed tracing
-
-Application health checks
+Tracing
 
 Dashboards
 
 Alerting
 
-SLO/SLI concepts
+Application health monitoring
+
+Repository Structure
+
+The repository will evolve as new platform capabilities are introduced.
+
+cloud-native-platform/
+│
+├── app/
+│   ├── src/
+│   ├── public/
+│   ├── tests/
+│   ├── package.json
+│   └── package-lock.json
+│
+├── docker/
+│   ├── Dockerfile
+│   └── docker-compose.yml
+│
+├── terraform/
+│   ├── modules/
+│   ├── environments/
+│   ├── main.tf
+│   ├── variables.tf
+│   └── outputs.tf
+│
+├── kubernetes/
+│   ├── namespace.yaml
+│   ├── deployment.yaml
+│   ├── service.yaml
+│   ├── ingress.yaml
+│   └── configmap.yaml
+│
+├── helm/
+│   └── cloud-native-platform/
+│
+├── .github/
+│   └── workflows/
+│       ├── ci.yml
+│       ├── security.yml
+│       └── cd.yml
+│
+├── monitoring/
+│   ├── dashboards/
+│   └── alerts/
+│
+├── scripts/
+│
+├── docs/
+│   ├── architecture/
+│   ├── decisions/
+│   └── runbooks/
+│
+└── README.md
+
+Development Roadmap
+
+The platform is being developed incrementally, with each phase introducing additional engineering capabilities.
+
+Phase 1 — Application Foundation
+
+Objective: Establish a clean and maintainable application baseline.
+
+Node.js
+
+Express
+
+HTTP fundamentals
+
+Routing
+
+Static content
+
+Environment configuration
+
+Git-based development
+
+Status: 🟢 In Progress
+
+Phase 2 — Containerization
+
+Objective: Package the application into a reproducible runtime environment.
+
+Docker
+
+Dockerfile
+
+Multi-stage builds
+
+Image optimization
+
+Docker Compose
+
+Container networking
+
+Environment configuration
 
 Status: 🔵 Planned
 
-Phase 8 — Production Engineering
+Phase 3 — Continuous Integration
 
-High availability
+Objective: Automate validation of every code change.
 
-Scalability
+Pipeline capabilities will include:
 
-Disaster recovery
+Git Push
+   │
+   ▼
+Build
+   │
+   ▼
+Lint
+   │
+   ▼
+Unit Tests
+   │
+   ▼
+Security Checks
+   │
+   ▼
+Container Build
+   │
+   ▼
+Artifact / Image
+
+
+Planned capabilities:
+
+GitHub Actions
+
+Automated testing
+
+Code quality checks
+
+Dependency scanning
+
+Container image scanning
+
+Build artifacts
+
+Status: 🔵 Planned
+
+Phase 4 — Infrastructure as Code
+
+Objective: Replace manually provisioned infrastructure with repeatable automation.
+
+Terraform will be used to manage:
+
+Networking
+
+VPC/VNet architecture
+
+Subnets
+
+Security controls
+
+IAM
+
+Compute resources
+
+Load balancing
+
+Storage
+
+Cloud services
+
+Infrastructure will follow a modular and environment-aware design.
+
+Status: 🔵 Planned
+
+Phase 5 — Cloud Deployment
+
+Objective: Deploy the platform into a real cloud environment.
+
+The implementation will demonstrate:
+
+Cloud networking
+
+Identity management
+
+Secure resource access
+
+Environment separation
+
+Infrastructure automation
+
+Application deployment
+
+Cloud monitoring
+
+Cost-aware architecture
+
+Status: 🔵 Planned
+
+Phase 6 — Kubernetes Platform
+
+Objective: Introduce container orchestration and platform-level deployment capabilities.
+
+Planned components:
+
+Kubernetes cluster
+
+Namespaces
+
+Deployments
+
+Services
+
+Ingress
+
+ConfigMaps
+
+Secrets
+
+Readiness probes
+
+Liveness probes
+
+Resource requests and limits
+
+Horizontal Pod Autoscaling
+
+Helm
+
+Status: 🔵 Planned
+
+Phase 7 — Continuous Delivery
+
+Objective: Automate application delivery from source control to production.
+
+Target workflow:
+
+Developer
+    │
+    ▼
+GitHub
+    │
+    ▼
+CI Pipeline
+    │
+    ├── Test
+    ├── Security Scan
+    ├── Build
+    └── Package
+          │
+          ▼
+    Container Registry
+          │
+          ▼
+    Deployment Pipeline
+          │
+          ▼
+     Kubernetes
+          │
+          ▼
+      Production
+
+
+Deployment strategies will eventually include:
 
 Rolling deployments
 
@@ -353,69 +502,136 @@ Blue/green deployments
 
 Canary releases
 
-Backup and recovery
-
-Cost optimization
+Automated rollback
 
 Status: 🔵 Planned
 
-Skills Demonstrated
+Phase 8 — Observability
 
-The completed project is intended to demonstrate practical experience with:
+Objective: Provide visibility into application and infrastructure health.
 
-Cloud Engineering
-├── AWS / Azure / GCP
-├── Networking
-├── IAM
-└── Cloud Security
+The observability layer will address:
 
-DevOps
-├── Git
-├── GitHub Actions
-├── CI/CD
-├── Automation
-└── Release Management
+Metrics
 
-Containers
-├── Docker
-├── Docker Compose
-└── Container Security
+Application performance
+
+CPU and memory utilization
+
+Request rates
+
+Error rates
+
+Latency
+
+Logging
+
+Application logs
+
+Container logs
+
+Infrastructure logs
+
+Centralized log collection
+
+Alerting
+
+Availability
+
+Error rates
+
+Resource utilization
+
+Application health
+
+Deployment failures
+
+Tracing
+
+Request flow
+
+Service dependencies
+
+Performance bottlenecks
+
+Status: 🔵 Planned
+
+Security Strategy
+
+Security will be integrated throughout the development and deployment lifecycle rather than treated as a final-stage activity.
+
+The project will demonstrate:
+
+Secure Code
+     │
+     ▼
+Dependency Scanning
+     │
+     ▼
+SAST
+     │
+     ▼
+Container Scanning
+     │
+     ▼
+Secret Management
+     │
+     ▼
+IAM / Least Privilege
+     │
+     ▼
+Runtime Security
+
+
+Key principles include:
+
+Least privilege
+
+Defense in depth
+
+Secrets outside source control
+
+Secure container images
+
+Dependency management
+
+Automated security validation
+
+Secure CI/CD pipelines
+
+Reliability & Operations
+
+The platform will progressively incorporate production engineering practices focused on:
+
+High availability
+
+Fault tolerance
+
+Scalability
+
+Health checks
+
+Automated recovery
+
+Deployment safety
+
+Backup and recovery
+
+Disaster recovery
+
+Capacity management
+
+Cost optimization
+
+Operational documentation will include architecture documentation, runbooks, troubleshooting procedures, and deployment guides.
+
+Engineering Principles
+
+This project follows the principles of modern cloud-native engineering:
 
 Infrastructure as Code
-├── Terraform
-├── Modules
-├── State Management
-└── Infrastructure Automation
 
-Kubernetes
-├── Deployments
-├── Services
-├── Ingress
-├── Secrets
-├── ConfigMaps
-└── Autoscaling
-
-Observability
-├── Metrics
-├── Logs
-├── Traces
-├── Dashboards
-└── Alerting
-
-Security
-├── SAST
-├── Dependency Scanning
-├── Container Scanning
-├── Secrets Management
-└── Least Privilege
-
-Development Philosophy
-
-This project follows several engineering principles:
-
-Automation over manual processes
-
-Infrastructure as Code
+Automation first
 
 Security by design
 
@@ -425,99 +641,150 @@ Reproducible environments
 
 Version-controlled infrastructure
 
-Continuous integration and delivery
+Continuous integration
 
-Observability-driven operations
+Continuous delivery
+
+Observability
 
 Least privilege
 
-Documentation as code
+Separation of configuration and code
 
-Troubleshooting
-node: command not found
+Infrastructure automation
 
-Install Node.js and restart your terminal.
+Operational readiness
 
-Port 3000 is already in use
+Local Development
+Prerequisites
 
-Identify the process using port 3000 or change the application port.
+Install the following tools:
 
-Application is not loading
+Node.js
 
-Verify that the server is running:
+npm
 
+Git
+
+Docker
+
+VS Code or another IDE
+
+A terminal
+
+Clone the Repository
+git clone <repository-url>
+cd cloud-native-platform
+
+Install Dependencies
+npm install
+
+Run the Application
 node index.js
 
 
-Then visit:
+The application will be available at:
 
 http://localhost:3000
 
-Future Improvements
+Project Status
+Capability	Status
+Node.js / Express	🟢 Implemented
+Git / GitHub	🟢 Implemented
+Application Testing	🔵 Planned
+Docker	🔵 Planned
+GitHub Actions	🔵 Planned
+Security Scanning	🔵 Planned
+Terraform	🔵 Planned
+Cloud Infrastructure	🔵 Planned
+Kubernetes	🔵 Planned
+Helm	🔵 Planned
+Continuous Delivery	🔵 Planned
+Monitoring	🔵 Planned
+Logging	🔵 Planned
+Alerting	🔵 Planned
+Production Deployment	🔵 Planned
+What This Project Demonstrates
 
-Planned improvements include:
+As the platform matures, the repository will demonstrate practical experience across the following engineering domains:
 
- Add automated unit tests
-
- Add Dockerfile
-
- Add Docker Compose
-
- Add GitHub Actions CI pipeline
-
- Add linting and code quality checks
-
- Add dependency vulnerability scanning
-
- Add container security scanning
-
- Add Terraform infrastructure
-
- Deploy infrastructure to the cloud
-
- Deploy application to Kubernetes
-
- Add Helm
-
- Add monitoring
-
- Add centralized logging
-
- Add alerting
-
- Implement production deployment strategies
-
- Document architecture decisions
-
-Project Objective
-
-The long-term objective of cloud-native-platform is to demonstrate the complete lifecycle of a modern cloud-native application:
-
-Plan
-  ↓
-Code
-  ↓
-Build
-  ↓
-Test
-  ↓
-Secure
-  ↓
-Package
-  ↓
-Provision
-  ↓
-Deploy
-  ↓
-Monitor
-  ↓
-Improve
+                    Cloud Engineering
+                           │
+          ┌────────────────┼────────────────┐
+          │                │                │
+        DevOps          Security        Platform
+          │                │                │
+      CI/CD            IAM            Kubernetes
+      GitHub            SAST             Helm
+      Automation        Secrets          Scaling
+          │                │                │
+          └────────────────┼────────────────┘
+                           │
+                     Infrastructure
+                           │
+                       Terraform
+                           │
+                     Observability
+                           │
+                  Metrics / Logs / Traces
 
 
-This repository is intended to serve as a practical demonstration of DevOps and Cloud Engineering capabilities from application development through production operations.
+The objective is to demonstrate not only knowledge of individual technologies, but the ability to integrate them into a cohesive engineering platform.
+
+Future Enhancements
+
+Planned future capabilities include:
+
+ Automated integration testing
+
+ Docker multi-stage builds
+
+ GitHub Actions CI/CD
+
+ Container registry integration
+
+ SAST and dependency scanning
+
+ Container vulnerability scanning
+
+ Terraform modules
+
+ Multiple cloud environments
+
+ Kubernetes deployment
+
+ Helm-based application packaging
+
+ Automated deployments
+
+ Deployment rollback
+
+ Horizontal autoscaling
+
+ Centralized logging
+
+ Metrics and dashboards
+
+ Alerting
+
+ Distributed tracing
+
+ Disaster recovery strategy
+
+ Cost optimization
+
+ Production runbooks
+
+ Architecture Decision Records
 
 Author
 
 Marie
+
+Cloud & DevOps Engineering Portfolio
+
+License
+
+This project is maintained for educational, professional development, and portfolio purposes.
 
 © 2026 Marie
